@@ -3,20 +3,15 @@ var playerHealth = 100;
 var playerAttack = 10;
 var playerMoney = 10;
 
-// You can also log multiple values at once like this
-console.log(playerName, playerAttack, playerHealth);
-
-var enemyName = "Roberto";
+var enemyNames = ["Roberto", "Amy Android", "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
-var fight = function() {
-    // Alert players that they are starting the round
+var fight = function(enemyName) {
     window.alert("Welcome to Robot Gladiators!");
 
+    // fight or dodge
     var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
-
-    // if player choses to fight, then fight
     if (promptFight === "fight" || promptFight === "FIGHT") {
         // player attack enemy
         enemyHealth = enemyHealth - playerAttack;
@@ -60,7 +55,10 @@ var fight = function() {
     }
     else {
         window.alert("You need to choose a valid option. Try again!");
+        fight();
     }
 };
 
-fight();
+for(var i = 0; i < enemyNames.length; i++) {
+    fight(enemyNames[i]);
+}
