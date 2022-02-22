@@ -2,7 +2,7 @@ var playerInfo = {
     name: window.prompt("What is your robot's name?"),
     health: 100,
     attack: 10,
-    money: 10
+    money: 10,
     reset: function() {
         this.health = 100;
         this.money = 10;
@@ -57,7 +57,7 @@ var fight = function(enemy) {
             break;
         }
         else {
-            window.alert(enem.name + " still has " + enemy.health + " health left.");
+            window.alert(enemy.name + " still has " + enemy.health + " health left.");
         }
 
         // enemy attack player
