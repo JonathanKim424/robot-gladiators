@@ -174,7 +174,12 @@ var fightOrSkip = function() {
         }
     }
 
-    return false;
+    if (promptFight === "fight") {
+        return false;
+    }
+
+    window.alert("You need to provide a valid answer! Please try again.");
+    return fightOrSkip();
 };
 
 /* GAME INFORMATION / VARIABLE */
